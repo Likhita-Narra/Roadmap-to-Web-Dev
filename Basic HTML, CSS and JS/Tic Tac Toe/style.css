@@ -26,11 +26,13 @@ body {
 .nav {
     display: flex;
     padding: 1vw;
+    margin-bottom: 0;
 }
 
 .title {
     padding-left: 4vw;
     flex: 9;
+    margin-bottom: 0;
 }
 
 .game-controls {
@@ -38,6 +40,7 @@ body {
     font-size: 1vw;
     padding-top: 1vw;
     text-align: center;
+    margin-bottom: 0;
 }
 
 #undo, #restart {
@@ -57,28 +60,42 @@ body {
     box-shadow: 0 0 10px 0 #f5bc3b inset, 0 0 10px 4px #f5bc3b;
 }
 
+/* Game Division */
 .game-container {
     display: flex;
     justify-content: center;
-    margin-top: 50px;
+    margin-top: 2vh;
+    border: 2px solid red;
 }
 
 .checkboard {
+    flex: 1;
+    justify-content: flex-end;
     display: grid;
-    grid-template-rows: repeat(3, 10vw);
-    grid-template-columns: repeat(3, 10vw);
+    grid-template-rows: repeat(3, 9vw);
+    grid-template-columns: repeat(3, 9vw);
+    border: 2px solid black;
+    margin: 4vw;
+    margin-top: 0;
+}
+
+.img-box {
+    /* display: none; */
+    flex: 1;
+    border: 2px solid black;
+    padding-top: 1.5vw;
 }
 
 .box {
     /* border: 2px solid white; */
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
     border-radius: 20px;
-    font-size: 5vw;
+    font-size: 4vw;
     cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 5px;
+    margin: 3px;
 }
 
 .box:hover {
@@ -87,10 +104,6 @@ body {
 
 .game-info {
     padding: 0 34px;
-}
-
-.img-box {
-    /* display: none; */
 }
 
 .draw {
@@ -103,8 +116,8 @@ body {
 }
 
 .responsive-img {
-    width: 20%;
-    height: auto;
+    height: 23vw;
+    width: auto;
 }
 
 
