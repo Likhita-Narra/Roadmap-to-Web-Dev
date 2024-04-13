@@ -1,0 +1,92 @@
+.aladin-regular {
+  font-family: "Aladin", system-ui;
+  font-weight: 400;
+  font-style: normal;;
+}
+
+.arya-regular {
+  font-family: "Arya", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.arya-bold {
+  font-family: "Arya", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    background-color: #CAF0F8;
+    color: #03045E;
+    align-items: center;
+    font-size: 4vw;
+    padding: 10px;
+    padding-left: 20px;
+    display: flex;
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+.game-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.checkboard {
+    display: grid;
+    grid-template-rows: repeat(3, 10vw);
+    grid-template-columns: repeat(3, 10vw);
+}
+
+.box {
+    border: 2px solid black;
+    font-size: 5vw;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box:hover {
+    background-color: antiquewhite;
+}
+
+.game-info {
+    padding: 0 34px;
+}
+
+.img-box {
+    display: none;
+}
+
+.br-0 {
+    border-right: 0;
+}
+
+.bl-0 {
+    border-left: 0;
+}
+
+.bt-0 {
+    border-top: 0;
+}
+
+.bb-0 {
+    border-bottom: 0;
+}
+
+.responsive-img {
+    width: 80%;
+    height: auto;
+}
+
