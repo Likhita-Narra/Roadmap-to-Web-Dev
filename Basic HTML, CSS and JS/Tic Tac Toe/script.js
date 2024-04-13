@@ -1,12 +1,17 @@
-console.log("Welcome to Tic Tac Toe");
-
 let move = new Audio("Media/Turn.mp3"); // Audio for each move
-let success = new Audio("Media/Success.mp3"); //Audio for game over
+let success = new Audio("Media/Success.mp3"); // Audio for game over
+let draw = new Audio("Media/Draw.mp3"); // Audio for a draw match
 
 let turn = "X";
 let boxes = document.getElementsByClassName("box");
-let patterns = ["012", "345", "678", "036", "147", "258", "048", "246"];
 let winIndices = "";
+let totalMoves = 0;
+
+let patterns = [
+    "012", "345", "678", // rows
+    "036", "147", "258", // columns
+    "048", "246" // diagonals
+];
 
 // Function to change turn
 const changeTurn = ()=>{
@@ -21,12 +26,26 @@ const checkWin = ()=>{
     }
 
     for(let i = 0; i < patterns.length; i++) {
-        if(moves.includes(patterns[i])) {
+        if(contains(moves, patterns[i])) {
             winIndices = winIndices.concat(patterns[i]);
             return true;
         }
     }
-    return false;
+
+    if(totalMoves === 9) {
+        draw.play();
+        document.getElementsByClassName("info")[0].style.display = "none";
+        document.getElementsByClassName("draw")[0].style.display = "inline";
+    }
+
+    else return false;
+}
+
+function contains(moves, pattern) {
+    for(let i = 0; i < pattern.length; i++) {
+        if(!moves.includes(pattern[i])) return false;
+    }
+    return true;
 }
 
 // Game logic
@@ -36,6 +55,7 @@ Array.from(boxes).forEach(element => {
         if(boxText.innerText === '') {
             boxText.innerText = turn;        
             move.play(); // To play audio
+            totalMoves++;
             if(checkWin()) {
                 highlightWin();
                 success.play();
@@ -47,12 +67,14 @@ Array.from(boxes).forEach(element => {
     })
 })
 
+// Restart button functionality
 document.getElementById("restart").addEventListener('click', ()=> {
     location.reload();
 })
 
+// Highlight the winning moves
 function highlightWin() {
     for(let i = 0; i < winIndices.length; i++) {
-        boxes[parseInt(winIndices[i])].style.backgroundColor = "yellow";
+        boxes[parseInt(winIndices[i])].style.backgroundColor = "#f5bc3b";
     }
 }

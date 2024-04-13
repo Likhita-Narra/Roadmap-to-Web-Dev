@@ -5,40 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tic Tac Toe</title>
     <link rel="stylesheet" href="style.css">
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Aladin&family=Arya:wght@400;700&family=Tilt+Neon&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
     <!-- Fonts End -->
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <!-- Icons End -->
 </head>
 <body>
-    <nav class="aladin-regular">
-        <ul>
-            <li>Tic Tac Toe</li>
-        </ul>
-    </nav>
+
+    <!-- Navigation Division -->
+    <div class="nav">
+        <div class="title bangers-regular">
+            <h1>TIC TAC TOE</h1>
+        </div>
+        <div class="game-controls nunito-buttons inset-shadow"><h1 id="undo">⏪ Undo</h1></div>
+        <div class="game-controls nunito-buttons inset-shadow"><h1 id="restart">🔄 Restart</h1></div>
+    </div>
 
     <div class="game-container">
         <div class="checkboard arya-bold">
-            <div class="box bl-0 bt-0"><span class="box-text"></span></div>
-            <div class="box bt-0"><span class="box-text"></span></div>
-            <div class="box br-0 bt-0"><span class="box-text"></span></div>
-            <div class="box bl-0"><span class="box-text"></span></div>
             <div class="box"><span class="box-text"></span></div>
-            <div class="box br-0"><span class="box-text"></span></div>
-            <div class="box bl-0 bb-0"><span class="box-text"></span></div>
-            <div class="box bb-0"><span class="box-text"></span></div>
-            <div class="box br-0 bb-0"><span class="box-text"></span></div>
+            <div class="box"><span class="box-text"></span></div>
+            <div class="box"><span class="box-text"></span></div>
+            <div class="box"><span class="box-text"></span></div>
+            <div class="box"><span class="box-text"></span></div>
+            <div class="box"><span class="box-text"></span></div>
+            <div class="box"><span class="box-text"></span></div>
+            <div class="box"><span class="box-text"></span></div>
+            <div class="box"><span class="box-text"></span></div>
         </div>
 
         <div class="game-info">
-            <h1>Welcome to Tic Tac Toe</h1>
-            <div>
-                <span class="info">Turn for X</span>
-                <button id="restart">Restart</button>
-            </div>
             <div class="img-box">
-                <img src="Media/Milky.gif" alt="Dancing Cartoon" class="responsive-img">
+                <img src="Media/Hawaii_Minion.png" class="responsive-img" style="display: flex; height: 35vw; width: auto;">
+            </div>
+            <div class="info-box">
+                <span class="info">Turn for X</span>
+                <span class="draw">It's a draw 🥺</span>
+                <button id="restart">Restart</button>
             </div>
         </div>
     </div>

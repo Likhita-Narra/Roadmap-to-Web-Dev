@@ -1,18 +1,14 @@
-.aladin-regular {
-  font-family: "Aladin", system-ui;
-  font-weight: 400;
-  font-style: normal;;
-}
-
-.arya-regular {
-  font-family: "Arya", sans-serif;
+.bangers-regular {
+  font-family: "Bangers", system-ui;
   font-weight: 400;
   font-style: normal;
+  font-size: 2.5vw;
 }
 
-.arya-bold {
-  font-family: "Arya", sans-serif;
-  font-weight: 700;
+.nunito-buttons {
+  font-family: "Nunito", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
   font-style: normal;
 }
 
@@ -22,18 +18,43 @@
     padding: 0;
 }
 
-nav {
-    background-color: #CAF0F8;
-    color: #03045E;
-    align-items: center;
-    font-size: 4vw;
-    padding: 10px;
-    padding-left: 20px;
-    display: flex;
+body {
+    background-image: linear-gradient(to right, #5c3929, #f5bc3b);
+    color: #ffffff;
 }
 
-nav ul {
-    list-style-type: none;
+.nav {
+    display: flex;
+    padding: 1vw;
+}
+
+.title {
+    padding-left: 4vw;
+    flex: 9;
+}
+
+.game-controls {
+    flex: 2.5;
+    font-size: 1vw;
+    padding-top: 1vw;
+    text-align: center;
+}
+
+#undo, #restart {
+    margin: 5px;
+    border-radius: 0.6em;
+    color: #fff;
+    transition: all 150ms ease-in-out;
+    text-transform: uppercase;
+    font-weight: bolder;
+    text-shadow: 3px 2px #898989;
+}
+
+
+#undo:hover, #restart:hover {
+    cursor: pointer;
+    font-size: 2.1vw;
+    box-shadow: 0 0 10px 0 #f5bc3b inset, 0 0 10px 4px #f5bc3b;
 }
 
 .game-container {
@@ -49,16 +70,19 @@ nav ul {
 }
 
 .box {
-    border: 2px solid black;
+    /* border: 2px solid white; */
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
     font-size: 5vw;
     cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 5px;
 }
 
 .box:hover {
-    background-color: antiquewhite;
+    background-color: #5c3929;
 }
 
 .game-info {
@@ -66,27 +90,21 @@ nav ul {
 }
 
 .img-box {
+    /* display: none; */
+}
+
+.draw {
     display: none;
 }
 
-.br-0 {
-    border-right: 0;
-}
-
-.bl-0 {
-    border-left: 0;
-}
-
-.bt-0 {
-    border-top: 0;
-}
-
-.bb-0 {
-    border-bottom: 0;
+.restart {
+    text-align: center;
+    display: block;
 }
 
 .responsive-img {
-    width: 80%;
+    width: 20%;
     height: auto;
 }
+
 
