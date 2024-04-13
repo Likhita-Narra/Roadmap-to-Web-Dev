@@ -62,7 +62,7 @@ Array.from(boxes).forEach(element => {
                 document.getElementsByClassName("img-box")[0].style.display = "flex";
             }
             turn = changeTurn();    
-            document.getElementsByClassName("info")[0].innerHTML = "Turn for " + turn;
+            document.getElementsByClassName("info")[0].innerHTML = "Turn for " + turn + "!";
         }
     })
 })
