@@ -36,6 +36,7 @@ const checkWin = ()=>{
         draw.play();
         document.getElementsByClassName("info")[0].style.display = "none";
         document.getElementsByClassName("draw")[0].style.display = "inline";
+        document.getElementById("minion").src = "Media/shock.gif";
     }
 
     else return false;
@@ -60,6 +61,7 @@ Array.from(boxes).forEach(element => {
                 highlightWin();
                 success.play();
                 document.getElementsByClassName("img-box")[0].style.display = "flex";
+                document.getElementById("minion").src = "Media/Wohoo.gif";
             }
             turn = changeTurn();    
             document.getElementsByClassName("info")[0].innerHTML = "Turn for " + turn + "!";
@@ -69,6 +71,10 @@ Array.from(boxes).forEach(element => {
 
 // Restart button functionality
 document.getElementById("restart").addEventListener('click', ()=> {
+    location.reload();
+})
+
+document.getElementById("undo").addEventListener('click', ()=> {
     location.reload();
 })
 
