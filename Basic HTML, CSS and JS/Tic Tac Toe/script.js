@@ -37,6 +37,7 @@ const checkWin = ()=>{
         document.getElementsByClassName("info")[0].style.display = "none";
         document.getElementsByClassName("draw")[0].style.display = "inline";
         document.getElementById("minion").src = "Media/shock.gif";
+        document.getElementById("restart").classList.add("zoom-in");
     }
 
     else return false;
@@ -62,6 +63,7 @@ Array.from(boxes).forEach(element => {
                 success.play();
                 document.getElementsByClassName("img-box")[0].style.display = "flex";
                 document.getElementById("minion").src = "Media/Wohoo.gif";
+                document.getElementById("restart").classList.add("zoom-in");
             }
             turn = changeTurn();    
             document.getElementsByClassName("info")[0].innerHTML = "Turn for " + turn + "!";
