@@ -25,3 +25,29 @@ A modern web browser is required to run this game.
 1. Clone the repository or download the ZIP file.
    ```bash
    git clone https://github.com/yourusername/Road-Map-to-Web-Dev.git
+
+2. Navigate to the Tic Tac Toe directory
+
+   Open a terminal and use the following command to navigate to the Tic Tac Toe directory:
+
+    ```bash
+    cd 'Road-Map-to-Web-Dev/Basic HTML, CSS and JS/Tic Tac Toe'
+
+3. Then, open the *index.html* file in a web browser to start the game.
+
+### How to Play
+
+The game board consists of a 3x3 grid:
+
+- Player 1 starts the game and plays with 'X', followed by Player 2 who plays with 'O'.
+- Players take turns placing their symbols on the grid.
+- The first player to align three symbols vertically, horizontally, or diagonally wins the game.
+- If all cells are filled and no player has aligned three symbols, the game ends in a draw.
+
+### Built With
+
+- **HTML:** Structures the game interface.
+- **CSS:** Styles the game interface.
+- **JavaScript:** Manages game mechanics and interactivity.
+
+
