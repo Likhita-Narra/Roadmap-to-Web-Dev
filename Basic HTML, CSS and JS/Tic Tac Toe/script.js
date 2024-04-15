@@ -4,9 +4,10 @@ let draw = new Audio("Media/Draw.mp3"); // Audio for a draw match
 
 let turn = "X";
 let boxes = document.getElementsByClassName("box");
-let winIndices = "";
-let totalMoves = 0;
-let lastMove = "";
+let winIndices = ""; // For highliting the winning pattern
+let totalMoves = 0; // To check for a draw
+let lastMove = ""; // For undoing the last move
+let gameOver = false;
 
 let patterns = [
     "012", "345", "678", // rows
@@ -39,7 +40,9 @@ const checkWin = ()=>{
         document.getElementsByClassName("info")[0].style.display = "none";
         document.getElementsByClassName("draw")[0].style.display = "inline";
         document.getElementById("minion").src = "Media/shock.gif";
+        document.getElementById("minion-mobile").src = "Media/shock.gif";
         document.getElementById("restart").classList.add("zoom-in");
+        gameOver = true;
     }
 
     else return false;
@@ -57,21 +60,27 @@ Array.from(boxes).forEach(element => {
     let boxText = element.querySelector('.box-text');
     element.addEventListener('click', ()=>{
         lastMove = element.id;
-        if(boxText.innerText === '') {
+        if(boxText.innerText === '' && !gameOver) {
             boxText.innerText = turn;        
             move.play(); // To play audio
             totalMoves++;
             
+            //Check if there's a winning move
             if(checkWin()) {
                 highlightWin();
                 success.play();
                 document.getElementsByClassName("img-box")[0].style.display = "flex";
                 document.getElementById("minion").src = "Media/Wohoo.gif";
+                document.getElementById("minion-mobile").src = "Media/Wohoo.gif";
                 document.getElementById("restart").classList.add("zoom-in");
+                document.getElementsByClassName("info")[0].innerText = turn + " wins!";
+                gameOver = true;
             }
 
-            turn = changeTurn();    
-            document.getElementsByClassName("info")[0].innerHTML = "Turn for " + turn + "!";
+            else {
+                turn = changeTurn();    
+                document.getElementsByClassName("info")[0].innerHTML = "Turn for " + turn + "!"; 
+            }
         }
     })
 })
@@ -81,12 +90,14 @@ document.getElementById("restart").addEventListener('click', ()=> {
     location.reload();
 })
 
+// Undo button functionality
 document.getElementById("undo").addEventListener('click', ()=> {
+    if(!gameOver) {
     totalMoves--;
     element = document.getElementById(lastMove);
     element.querySelector(".box-text").innerText = "";
     turn = changeTurn();
-    document.getElementsByClassName("info")[0].innerHTML = "Turn for " + turn + "!"; 
+    document.getElementsByClassName("info")[0].innerHTML = "Turn for " + turn + "!"; }
 })
 
 // Highlight the winning moves

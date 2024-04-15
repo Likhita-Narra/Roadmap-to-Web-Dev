@@ -24,6 +24,7 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body {
@@ -73,6 +74,7 @@ body {
     display: flex;
     justify-content: center;
     margin-top: 2vh;
+    flex-direction: row;
 }
 
 .checkboard {
@@ -92,9 +94,10 @@ body {
 
 .box {
     /* border: 2px solid white; */
-    box-shadow: 5px 5px 10px rgba(243, 243, 246, 0.2);
+    box-shadow: 10px 10px 20px rgba(256, 256, 0, 0.6);
     border-radius: 20px;
     font-size: 4vw;
+    font-weight: 700;
     cursor: pointer;
     display: flex;
     justify-content: center;
@@ -124,6 +127,10 @@ body {
     width: auto;
 }
 
+#minion-mobile {
+    display: none;
+}
+
 @keyframes zoom-text {
     0% {
         transform: scale(1, 1);
@@ -141,6 +148,69 @@ body {
 .zoom-in {
     animation: zoom-text 1.6s ease infinite;
     box-shadow: 0 0 10px 0 #f5bc3b inset, 0 0 10px 4px #f5bc3b;
+}
+
+@media (max-width: 600px) {
+    .game-container {
+        flex-direction: column;
+        margin-top: 1vh;
+    }
+
+    .checkboard, .img-box {
+        margin: auto;
+        margin-top: 1vw;
+    }
+
+    .checkboard {
+        grid-template-rows: repeat(3, 20vw);
+        grid-template-columns: repeat(3, 20vw);
+        border-radius: 10px;
+    }
+
+    .box {
+        font-size: 7vw;
+    }
+
+    .responsive-img {
+        height: 60vw;
+        width: auto;
+        margin-top: 1vh;
+    }
+
+    .game-info {
+        margin-top: 2vh;
+    }
+
+    .bangers-regular {
+        font-size: 3.5vw;
+    }
+
+    .nav {
+        padding: 4vw;
+    }
+
+    .game-controls {
+        flex: 4.5;
+        font-size: 1.5vw;
+    }
+
+    .bangers-light {
+        font-size: 5vw;
+    }
+
+    #undo:hover, #restart:hover {
+        cursor: pointer;
+    }
+
+    #minion {
+        display: none;
+    }
+
+    #minion-mobile {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }
 
 
