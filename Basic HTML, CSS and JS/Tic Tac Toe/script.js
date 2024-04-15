@@ -6,6 +6,7 @@ let turn = "X";
 let boxes = document.getElementsByClassName("box");
 let winIndices = "";
 let totalMoves = 0;
+let lastMove = "";
 
 let patterns = [
     "012", "345", "678", // rows
@@ -32,6 +33,7 @@ const checkWin = ()=>{
         }
     }
 
+    // Condition to check for a draw
     if(totalMoves === 9) {
         draw.play();
         document.getElementsByClassName("info")[0].style.display = "none";
@@ -54,10 +56,12 @@ function contains(moves, pattern) {
 Array.from(boxes).forEach(element => {
     let boxText = element.querySelector('.box-text');
     element.addEventListener('click', ()=>{
+        lastMove = element.id;
         if(boxText.innerText === '') {
             boxText.innerText = turn;        
             move.play(); // To play audio
             totalMoves++;
+            
             if(checkWin()) {
                 highlightWin();
                 success.play();
@@ -65,6 +69,7 @@ Array.from(boxes).forEach(element => {
                 document.getElementById("minion").src = "Media/Wohoo.gif";
                 document.getElementById("restart").classList.add("zoom-in");
             }
+
             turn = changeTurn();    
             document.getElementsByClassName("info")[0].innerHTML = "Turn for " + turn + "!";
         }
@@ -77,7 +82,11 @@ document.getElementById("restart").addEventListener('click', ()=> {
 })
 
 document.getElementById("undo").addEventListener('click', ()=> {
-    location.reload();
+    totalMoves--;
+    element = document.getElementById(lastMove);
+    element.querySelector(".box-text").innerText = "";
+    turn = changeTurn();
+    document.getElementsByClassName("info")[0].innerHTML = "Turn for " + turn + "!"; 
 })
 
 // Highlight the winning moves
