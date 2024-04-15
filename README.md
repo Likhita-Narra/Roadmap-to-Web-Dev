@@ -2,7 +2,7 @@
 
 This simple web-based Tic Tac Toe game is built with basic HTML, CSS, and JavaScript, enabling two players to play interactively on the same device.
 
-![Tic Tac Toe Screenshot](Basic HTML, CSS and JS/Tic Tac Toe/Media/Tic Tac Toe Screenshot.png)
+![Tic Tac Toe Screenshot](Basic%20HTML,%20CSS%20and%20JS/Tic%20Tac%20Toe/Media/Tic%20Tac%20Toe%20Screenshot.png)
 
 **Live Demo**: [Play Tic Tac Toe here!](https://shikshakshok.netlify.app/)
 
